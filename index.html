@@ -511,7 +511,7 @@ const COLLS=[['Rings','Engagement &amp; dress rings','marquise'],['Bracelets','T
 function fancyTag(c){if(/pink|vivid/i.test(c))return`<span class="fancy-tag" style="background:var(--pink)">Fancy Pink</span>`;if(/yellow|intense/i.test(c))return`<span class="fancy-tag" style="background:var(--yellow)">Fancy Yellow</span>`;return'';}
 function cardHTML(p){return`<a class="card" href="#product-${p.sku}" style="text-decoration:none;color:inherit">
  <div class="thumb"><span class="sku-tag">${p.sku}</span>${fancyTag(p.color)}<svg viewBox="0 0 100 100" fill="#e8dcc0" aria-hidden="true">${S[p.glyph]}</svg><span class="no-photo">Image to follow</span></div>
- <div class="card-body"><span class="cat-label">${p.coll}</span><h3>${p.name}</h3>
+ <div class="card-body"><span class="cat-label">${p.coll}</span><h3>${p.sku} - ${p.name}</h3>
  <div class="specs"><span class="spec">${p.color}</span><span class="spec">${p.clarity}</span><span class="spec">${p.shape}</span><span class="spec">${p.weight}</span></div>
  <div class="price-row"><span class="price">${gbp(p.price)}</span><span class="enq">View piece</span></div></div></a>`;}
 
@@ -525,7 +525,7 @@ function renderPDP(sku){const p=byS[sku]||P[0];const stone=p.type==='Bracelet'||
  <div class="pdp-media"><div class="pdp-hero"><svg viewBox="0 0 100 100" fill="#e0d3b4" aria-hidden="true">${S[p.glyph]}</svg><span class="no-photo">Image to follow</span></div>
  <div class="pdp-thumbs"><div><svg viewBox="0 0 100 100" fill="#d8cbac">${S[p.glyph]}</svg></div><div><svg viewBox="0 0 100 100" fill="#d8cbac">${S[p.glyph]}</svg></div><div><svg viewBox="0 0 100 100" fill="#d8cbac">${S[p.glyph]}</svg></div></div></div>
  <div class="pdp-info"><div class="breadcrumb"><a href="#shop">Shop</a> / ${p.coll} / ${p.sku}</div>
- <p class="cat-label">${p.coll}</p><h1>${p.name}</h1>
+ <p class="cat-label">${p.coll}</p><h1>${p.sku} - ${p.name}</h1>
  <div class="pdp-price">${gbp(p.price)}</div><div class="vat">Includes VAT · certification included</div>
  <p class="lede">A ${p.shape.toLowerCase()} diamond of ${p.color} colour and ${p.clarity} clarity, ${p.type==='Ring'?'set as a solitaire and':''} finished by hand in our London workshop. Supplied with independent certification.</p>
  <table class="spec-table">
